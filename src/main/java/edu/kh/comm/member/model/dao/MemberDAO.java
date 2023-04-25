@@ -24,7 +24,7 @@ public class MemberDAO {
 	public Member login(Member inputMember) {
 
 
-		// 1행 조회(파라미터X) 방법
+		// 1행 조회(파라미터X) 방 법
 		//int count = sqlSession.selectOne("memberMapper.test1");
 	
 		//logger.debug(count + "");
