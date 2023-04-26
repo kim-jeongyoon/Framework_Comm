@@ -17,6 +17,7 @@ import org.springframework.web.bind.annotation.ModelAttribute;
 import org.springframework.web.bind.annotation.PostMapping;
 import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RequestParam;
+import org.springframework.web.bind.annotation.ResponseBody;
 import org.springframework.web.bind.annotation.SessionAttributes;
 import org.springframework.web.bind.support.SessionStatus;
 import org.springframework.web.servlet.mvc.support.RedirectAttributes;
@@ -247,6 +248,58 @@ public class MemberController {
 		
 		return "member/signUp";
 	}
+	
+	//이메일 중복 검사
+	@ResponseBody // ajax응답 시 사용
+	@GetMapping("/emailDupCheck")
+	//public String emailDupCheck(@RequestParam("memberEmail") String memberEmail) { //파라미터 key값과 저장하려는 변수 명이 같으면 생략가능!
+		public int emailDupCheck( String memberEmail) {
+		
+			//int result = service.emailDupCheck(memberEmail);
+			
+			// 컨트롤러에서 반환되는 값은 forward 또는 redirect를 위한 경로인 경우가 일반적
+			// --> 반환되는 값은 경로로 인식됨
+			
+			// 이를 해결하기 위한 어노테이션 @ResponseBody 가 존재함
+			
+			// @ResponseBody : 반환되는 값을 응답의 몸통(body)에 추가하여
+			//					이전 요청 주소로 돌아감
+			// -> 컨트롤러에서 반환되는 값이 경로가 아닌 "값 자체" 로 인식됨.
+				
+			return  service.emailDupCheck(memberEmail);
+		
+		
+	}
+	
+
+	// 닉네임 중복검사
+	@ResponseBody
+	@GetMapping("/nicknameDupCheck")
+	public int nicknameDupCheck(String memberNickname) {
+		
+
+		return service.nicknameDupCheck(memberNickname);
+	}
+	
+	// 회원가입
+	
+	@PostMapping("/signUp")
+	public String signUpPost(Member inputMember) {
+		
+		int result = service.signUp(inputMember);		
+		
+		return "redirect:/";
+		
+	}
+	
+	
+	
+	
+	
+	// 회원 1명 정보 조회(ajax)
+	
+	// 회원 목록 조회(ajax)
+	
 	
 	
 }

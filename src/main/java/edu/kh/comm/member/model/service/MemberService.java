@@ -21,6 +21,12 @@ public interface MemberService {
 	 * @return loginMember
 	 */
 	public abstract Member login(Member inputMember);
+
+	public abstract int emailDupCheck(String memberEmail);
+
+	public abstract int nicknameDupCheck(String memberNickname);
+
+	public abstract int signUp(Member inputMember);
 	
 	
 	
