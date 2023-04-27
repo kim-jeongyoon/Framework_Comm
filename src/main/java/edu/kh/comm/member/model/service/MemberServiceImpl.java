@@ -9,6 +9,10 @@ import org.springframework.stereotype.Service;
 import edu.kh.comm.member.model.dao.MemberDAO;
 import edu.kh.comm.member.model.vo.Member;
 
+/**
+ * @author JeongYoon
+ *
+ */
 @Service // 비즈니스 로직(데이터 가공, DB 연결)을 처리하는 클래스임을 명시 + bean 등록
 public class MemberServiceImpl implements MemberService{
 
@@ -91,6 +95,9 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 
+	/** 이메일 중복검사 서비스 구현
+	 *
+	 */
 	@Override
 	public int emailDupCheck(String memberEmail) {
 		
@@ -98,6 +105,9 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 
+	/** 닉네임 중복검사 서비스 구현
+	 *
+	 */
 	@Override
 	public int nicknameDupCheck(String memberNickname) {
 		
@@ -105,6 +115,9 @@ public class MemberServiceImpl implements MemberService{
 	}
 
 
+	/** 회원가입 서비스 구현
+	 *
+	 */
 	@Override
 	public int signUp(Member inputMember) {
 		
@@ -115,18 +128,6 @@ public class MemberServiceImpl implements MemberService{
 		return result;
 		
 	}
-	
-	
-
-
-
-
-	
-	
-	
-	
-	
-	
 	
 	
 }

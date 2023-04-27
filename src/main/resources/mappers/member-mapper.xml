@@ -134,7 +134,7 @@
 			    MEMBER_ADDR, PROFILE_IMG, 
 			    TO_CHAR( ENROLL_DT, 'YYYY-MM-DD HH24:MI:SS') AS ENROLL_DT, MEMBER_PW
 			FROM MEMBER_S
-			WHERE MEMBER_EMAIL = #{memberEmail}
+			WHERE MEMBER_EMAIL = #{memberEmail} 
 			<!-- AND MEMBER_PW = #{memberPw} -->
 			AND SECESSION_FL = 'N'
 	   </select>
@@ -159,5 +159,6 @@
 		VALUES(SEQ_MEMBER_NO.NEXTVAL , #{memberEmail} , #{memberPw} , #{memberNickname} , #{memberTel} , DEFAULT, DEFAULT, DEFAULT, DEFAULT)
 	   </insert>
  	   
+
 	   
 </mapper>

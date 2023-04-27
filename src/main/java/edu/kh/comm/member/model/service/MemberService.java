@@ -27,12 +27,8 @@ public interface MemberService {
 	public abstract int nicknameDupCheck(String memberNickname);
 
 	public abstract int signUp(Member inputMember);
-	
-	
-	
-	
-	
-	
+
+
 	
 	
 }
