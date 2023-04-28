@@ -155,8 +155,14 @@
 	   
 	   <!-- 회원가입 -->
 	   <insert id="signUp" parameterType ="member">
-		INSERT INTO MEMBER_S
-		VALUES(SEQ_MEMBER_NO.NEXTVAL , #{memberEmail} , #{memberPw} , #{memberNickname} , #{memberTel} , DEFAULT, DEFAULT, DEFAULT, DEFAULT)
+			INSERT INTO MEMBER_S
+			VALUES(SEQ_MEMBER_NO.NEXTVAL,
+		  	#{memberEmail} ,
+		  	#{memberPw} , 
+		 	#{memberNickname} , 
+		  	#{memberTel} , 
+		  	#{memberAddress},
+		   	DEFAULT, DEFAULT, DEFAULT)
 	   </insert>
  	   
 

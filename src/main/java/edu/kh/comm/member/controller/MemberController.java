@@ -290,11 +290,48 @@ public class MemberController {
 	// 회원가입
 	
 	@PostMapping("/signUp")
-	public String signUpPost(Member inputMember) {
+	public String signUp(Member inputMember,
+								String[] memberAddress,
+								RedirectAttributes ra) {
+		
+		// 커맨드 객체를 이용해서 입력된 회원 정보를 잘 받아옴
+		// 단, 같은 name을 가진 주소가 하나의 문자열로 합쳐서 세팅되어 들어옴
+		// -> 도로명 주소게 "," 기호가 포함되는 경우가 있어 이를 구분자로 사용할 수 없다.
+	
+		inputMember.setMemberAddress(String.join(",,", memberAddress));
+		
+		if(inputMember.getMemberAddress().equals(",,,,")) {
+			inputMember.setMemberAddress(null);// null로 변환
+			
+			//회원 가입 서비스 호출
+			
+			
+		}
+		// String.join("구분자", 배열)
+		// 배열을 하나의 문자열로 합치는 메서드
+		// 값 중간중간에 구분자가 들어가서 하나의 문장열로 합쳐줌
+		// [a, b, c] -> join 진행 --> "a,,b,,c"
+		
+		
+		
 		
 		int result = service.signUp(inputMember);		
 		
-		return "redirect:/";
+		String message = null;
+		String path = null;
+		
+		if (result > 0) { //회원 가입 성공
+			message = "회원 가입 성공";
+			path = "redirect:/";	
+		} else {
+			message= "회원 가입 실패";
+			path = "redirect:/member/signUp"; 
+		}
+		
+		ra.addFlashAttribute("message", message);
+		
+		
+		return path;
 		
 	}
 	
