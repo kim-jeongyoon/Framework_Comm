@@ -19,7 +19,6 @@
 			classpath:spring/root-context.xml
 			classpath:spring/spring-security.xml
 		</param-value>
-		
 	</context-param>
 	
 	<!-- Creates the Spring Container shared by all Servlets and Filters -->
