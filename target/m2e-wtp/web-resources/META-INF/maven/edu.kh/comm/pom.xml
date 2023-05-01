@@ -1,7 +1,7 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <project xmlns="http://maven.apache.org/POM/4.0.0"
 	xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd">
+	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 https://maven.apache.org/maven-v4_0_0.xsd"> 
 	<modelVersion>4.0.0</modelVersion> <!-- Maven 2 버전 이후 POM의 경우 항상 4.0.0 -->
 	<groupId>edu.kh</groupId> <!-- 최상위 패키지 1, 2레벨 -->
 	<artifactId>comm</artifactId> <!-- 최상위 패키지 3레벨 == context-path -->
@@ -196,6 +196,14 @@
 			<version>${org.slf4j-version}</version>
 			<scope>runtime</scope>
 		</dependency>
+		
+		<!-- https://mvnrepository.com/artifact/org.lazyluke/log4jdbc-remix -->
+		<dependency>
+   			<groupId>org.lazyluke</groupId>
+    		<artifactId>log4jdbc-remix</artifactId>
+    		<version>0.2.7</version>
+		</dependency>
+		
 		
 		
 
