@@ -37,6 +37,8 @@
 		
 	</bean>
 	
+	
+	
 	<!-- 
 		log4j를 이용한 SQL 로그 출력용 bean 생성
 	
@@ -54,6 +56,9 @@
 	 	</property>
 	 </bean>
 	
+	
+	
+	<!-- MyBatis 관련 Bean 생성 -->
 	
 	<!-- SqlSession : sql구문을 DB에 전달, 실행하는 객체 
 		SqlSessionFactory : SqlSession을 만드는 객체 

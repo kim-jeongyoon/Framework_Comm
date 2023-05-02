@@ -47,6 +47,7 @@
 	 -->
 	<logger name="edu.kh.comm">
 		<level value="debug" />
+		<appender-ref ref="dailyRollingFile"/>
 	</logger>
 	
 	<!-- 3rdparty Loggers -->
@@ -65,6 +66,7 @@
 	<logger name="org.springframework.web">
 		<level value="info" />
 	</logger>
+	
 	
 	<!-- SQL 로그 출력 -->
 	<logger name="java.sql.Connection">
@@ -96,8 +98,6 @@
 		<level value="INFO" />
 		<appender-ref ref="sql-console" />
 	</logger>
-	
-	
 
 	<!-- Root Logger -->
 	<root>
