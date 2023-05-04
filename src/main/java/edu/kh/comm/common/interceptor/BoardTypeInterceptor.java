@@ -53,7 +53,7 @@ public class BoardTypeInterceptor implements HandlerInterceptor{
 		// application scope에 "boadTypeList"가 없을 경우
 		if( application.getAttribute("boardTypeList") == null ) {
 			
-			List<BoardType> boardTypeList = boardService.selectBoardType(); 
+			List<BoardType> boardTypeList = boardService.selectBoardType();
 			
 			application.setAttribute("boardTypeList", boardTypeList);
 			
