@@ -72,7 +72,7 @@ public class BoardServiceImpl implements BoardService{
 		// 페이지네이션 객체 생성
 		Pagination pagination = new Pagination( (int)paramMap.get("cp"), listCount);
 		
-		// 검색 조건에 맞는 게시글 목록 조회 (페이징 처리적용)
+		// 검색 조건에 맞는 게시글 목록 조회 (페이징 처리 적용)
 		List<Board> boardList = dao.searchBoardList(paramMap, pagination);
 		
 		
