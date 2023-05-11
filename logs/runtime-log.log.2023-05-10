@@ -1,0 +1,97 @@
+2023-05-10 09:05:14 [INFO] 초기화 필터 생성
+2023-05-10 09:05:16 [INFO] -------------------------------------------------------------
+Start : BoardServiceImpl - selectBoardType
+Parameter : []
+ip : 0:0:0:0:0:0:0:1
+2023-05-10 09:05:17 [INFO] Return Value : [edu.kh.comm.board.model.vo.BoardType@56606207, edu.kh.comm.board.model.vo.BoardType@d15a4e1, edu.kh.comm.board.model.vo.BoardType@487c56fa]
+2023-05-10 09:05:17 [INFO] Running Time : 876ms
+2023-05-10 09:05:17 [INFO] End : BoardServiceImpl - selectBoardType
+-------------------------------------------------------------
+
+2023-05-10 09:05:17 [INFO] -------------------------------------------------------------
+Start : MemberServiceImpl - selectAll
+Parameter : []
+ip : 0:0:0:0:0:0:0:1
+2023-05-10 09:05:17 [INFO] Return Value : [Member(memberNo=1, memberEmail=test01@naver.com, memberPw=null, memberNickname=테스트1, memberTel=null, memberAddress=null, profileImage=null, enrollDate=null, secessionFlag=null), Member(memberNo=2, memberEmail=test02@naver.com, memberPw=null, memberNickname=유저이, memberTel=null, memberAddress=null, profileImage=null, enrollDate=null, secessionFlag=null)]
+2023-05-10 09:05:17 [INFO] Running Time : 9ms
+2023-05-10 09:05:17 [INFO] End : MemberServiceImpl - selectAll
+-------------------------------------------------------------
+
+2023-05-10 09:05:23 [INFO] 로그인 기능 수행됨
+2023-05-10 09:05:23 [INFO] -------------------------------------------------------------
+Start : MemberServiceImpl - login
+Parameter : [Member(memberNo=0, memberEmail=test01@naver.com, memberPw=pass01!, memberNickname=null, memberTel=null, memberAddress=null, profileImage=null, enrollDate=null, secessionFlag=null)]
+ip : 0:0:0:0:0:0:0:1
+2023-05-10 09:05:23 [DEBUG] pass01! / $2a$10$RYL4CwwZFDPRehPoeryzgePzGM/aOQS.qDmFfcgCHgzKqJYnKdlF.
+2023-05-10 09:05:23 [INFO] Return Value : Member(memberNo=1, memberEmail=test01@naver.com, memberPw=null, memberNickname=테스트1, memberTel=01011111111, memberAddress=02830,,서울 성북구 아리랑로 3,,201호, profileImage=null, enrollDate=2023-04-26 13:51:26, secessionFlag=null)
+2023-05-10 09:05:23 [INFO] Running Time : 144ms
+2023-05-10 09:05:23 [INFO] End : MemberServiceImpl - login
+-------------------------------------------------------------
+
+2023-05-10 09:05:24 [INFO] -------------------------------------------------------------
+Start : MemberServiceImpl - selectAll
+Parameter : []
+ip : 0:0:0:0:0:0:0:1 (email : test01@naver.com)
+2023-05-10 09:05:24 [INFO] Return Value : [Member(memberNo=1, memberEmail=test01@naver.com, memberPw=null, memberNickname=테스트1, memberTel=null, memberAddress=null, profileImage=null, enrollDate=null, secessionFlag=null), Member(memberNo=2, memberEmail=test02@naver.com, memberPw=null, memberNickname=유저이, memberTel=null, memberAddress=null, profileImage=null, enrollDate=null, secessionFlag=null)]
+2023-05-10 09:05:24 [INFO] Running Time : 3ms
+2023-05-10 09:05:24 [INFO] End : MemberServiceImpl - selectAll
+-------------------------------------------------------------
+
+2023-05-10 09:05:25 [INFO] -------------------------------------------------------------
+Start : BoardServiceImpl - selectBoardList
+Parameter : [1, 3]
+ip : 0:0:0:0:0:0:0:1 (email : test01@naver.com)
+2023-05-10 09:05:25 [INFO] Return Value : {pagination=Pagination [currentPage=1, listCount=500, limit=10, pageSize=10, maxPage=50, startPage=1, endPage=10, prevPage=1, nextPage=11], boardList=[edu.kh.comm.board.model.vo.Board@7c0e35cc, edu.kh.comm.board.model.vo.Board@29a90e22, edu.kh.comm.board.model.vo.Board@3594d160, edu.kh.comm.board.model.vo.Board@20caf1ba, edu.kh.comm.board.model.vo.Board@2de7003a, edu.kh.comm.board.model.vo.Board@4c5ed3ba, edu.kh.comm.board.model.vo.Board@5fd20480, edu.kh.comm.board.model.vo.Board@28e269e1, edu.kh.comm.board.model.vo.Board@3d915a17, edu.kh.comm.board.model.vo.Board@7688d1c]}
+2023-05-10 09:05:25 [INFO] Running Time : 70ms
+2023-05-10 09:05:25 [INFO] End : BoardServiceImpl - selectBoardList
+-------------------------------------------------------------
+
+2023-05-10 09:05:25 [INFO] -------------------------------------------------------------
+Start : BoardServiceImpl - selectBoardDetail
+Parameter : [500]
+ip : 0:0:0:0:0:0:0:1 (email : test01@naver.com)
+2023-05-10 09:05:25 [INFO] Return Value : edu.kh.comm.board.model.vo.BoardDetail@242ed81c
+2023-05-10 09:05:25 [INFO] Running Time : 17ms
+2023-05-10 09:05:25 [INFO] End : BoardServiceImpl - selectBoardDetail
+-------------------------------------------------------------
+
+2023-05-10 09:05:25 [INFO] -------------------------------------------------------------
+Start : ReplyServiceImpl - selectReplyList
+Parameter : [500]
+ip : 0:0:0:0:0:0:0:1 (email : test01@naver.com)
+2023-05-10 09:05:25 [INFO] Return Value : [Reply(replyNo=1, replyContent=부모1, createDate=2023년 05월 09일 12시 37분 30초, boardNo=500, memberNo=1, memberNickname=테스트1, profileImage=null, parentReplyNo=0), Reply(replyNo=2, replyContent=부모1-자식1, createDate=2023년 05월 09일 12시 37분 33초, boardNo=500, memberNo=1, memberNickname=테스트1, profileImage=null, parentReplyNo=1), Reply(replyNo=3, replyContent=부모1-자식2, createDate=2023년 05월 09일 12시 37분 33초, boardNo=500, memberNo=1, memberNickname=테스트1, profileImage=null, parentReplyNo=1), Reply(replyNo=4, replyContent=부모1-자식3, createDate=2023년 05월 09일 12시 37분 33초, boardNo=500, memberNo=1, memberNickname=테스트1, profileImage=null, parentReplyNo=1), Reply(replyNo=11, replyContent=부모1-자식3-손자1, createDate=2023년 05월 09일 12시 37분 37초, boardNo=500, memberNo=1, memberNickname=테스트1, profileImage=null, parentReplyNo=4), Reply(replyNo=12, replyContent=부모1-자식3-손자2, createDate=2023년 05월 09일 12시 37분 37초, boardNo=500, memberNo=1, memberNickname=테스트1, profileImage=null, parentReplyNo=4), Reply(replyNo=13, replyContent=부모1-자식3-손자3, createDate=2023년 05월 09일 12시 37분 37초, boardNo=500, memberNo=1, memberNickname=테스트1, profileImage=null, parentReplyNo=4), Reply(replyNo=5, replyContent=부모2, createDate=2023년 05월 09일 12시 37분 35초, boardNo=500, memberNo=1, memberNickname=테스트1, profileImage=null, parentReplyNo=0), Reply(replyNo=8, replyContent=부모2-자식1, createDate=2023년 05월 09일 12시 37분 37초, boardNo=500, memberNo=1, memberNickname=테스트1, profileImage=null, parentReplyNo=5), Reply(replyNo=9, replyContent=부모2-자식2, createDate=2023년 05월 09일 12시 37분 37초, boardNo=500, memberNo=1, memberNickname=테스트1, profileImage=null, parentReplyNo=5), Reply(replyNo=10, replyContent=부모2-자식3, createDate=2023년 05월 09일 12시 37분 37초, boardNo=500, memberNo=1, memberNickname=테스트1, profileImage=null, parentReplyNo=5), Reply(replyNo=6, replyContent=부모3, createDate=2023년 05월 09일 12시 37분 35초, boardNo=500, memberNo=1, memberNickname=테스트1, profileImage=null, parentReplyNo=0), Reply(replyNo=7, replyContent=부모4, createDate=2023년 05월 09일 12시 37분 35초, boardNo=500, memberNo=1, memberNickname=테스트1, profileImage=null, parentReplyNo=0)]
+2023-05-10 09:05:25 [INFO] Running Time : 13ms
+2023-05-10 09:05:25 [INFO] End : ReplyServiceImpl - selectReplyList
+-------------------------------------------------------------
+
+2023-05-10 14:12:24 [INFO] 초기화 필터 생성
+2023-05-10 14:12:26 [INFO] 후처리 수행
+2023-05-10 14:12:26 [INFO] View단 처리 완료 후 수행
+2023-05-10 14:12:26 [INFO] 후처리 수행
+2023-05-10 14:12:26 [INFO] View단 처리 완료 후 수행
+2023-05-10 14:12:29 [INFO] 로그인 기능 수행됨
+2023-05-10 14:12:29 [DEBUG] asd213 / $2a$10$6HNzPtGFVn5lkPrX958QA.zoLPi8FjeYdCV0CmFOHyy3MbGVnVwzW
+2023-05-10 14:12:29 [INFO] 후처리 수행
+2023-05-10 14:12:29 [INFO] View단 처리 완료 후 수행
+2023-05-10 14:12:29 [INFO] 후처리 수행
+2023-05-10 14:12:29 [INFO] View단 처리 완료 후 수행
+2023-05-10 14:12:31 [INFO] 후처리 수행
+2023-05-10 14:12:31 [INFO] View단 처리 완료 후 수행
+2023-05-10 14:12:32 [INFO] 후처리 수행
+2023-05-10 14:12:32 [INFO] View단 처리 완료 후 수행
+2023-05-10 14:12:32 [INFO] 후처리 수행
+2023-05-10 14:12:32 [INFO] View단 처리 완료 후 수행
+2023-05-10 14:12:32 [INFO] 후처리 수행
+2023-05-10 14:12:32 [INFO] View단 처리 완료 후 수행
+2023-05-10 14:12:32 [INFO] 후처리 수행
+2023-05-10 14:12:33 [INFO] View단 처리 완료 후 수행
+2023-05-10 14:12:33 [INFO] 후처리 수행
+2023-05-10 14:12:33 [INFO] View단 처리 완료 후 수행
+2023-05-10 14:12:33 [INFO] 후처리 수행
+2023-05-10 14:12:33 [INFO] View단 처리 완료 후 수행
+2023-05-10 14:12:33 [INFO] 후처리 수행
+2023-05-10 14:12:33 [INFO] View단 처리 완료 후 수행
+2023-05-10 14:12:33 [INFO] 후처리 수행
+2023-05-10 14:12:33 [INFO] View단 처리 완료 후 수행
+2023-05-10 14:12:33 [INFO] 후처리 수행
+2023-05-10 14:12:33 [INFO] View단 처리 완료 후 수행
