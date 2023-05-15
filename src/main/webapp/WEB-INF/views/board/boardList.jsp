@@ -3,12 +3,11 @@
 
 <!-- map에 저장된 값을 각각 변수에 저장 -->
 <c:forEach var="boardType" items="${boardTypeList}">
-    <c:if test="${boardCode == boardType.boardCode}">
-        <c:set var="boardName" value="${boardType.boardName}" />
-    </c:if>
+	<c:if test="${boardCode == boardType.boardCode}">
+		<c:set var="boardName" value="${boardType.boardName}"/>
+	</c:if>
 </c:forEach>
 
-<!--<c:set var="boardName" value="${map.boardName}" /> -->
 <c:set var="pagination" value="${map.pagination}" />
 <c:set var="boardList" value="${map.boardList}" />
 
@@ -79,8 +78,10 @@
                                             <c:if test="${!empty board.thumbnail}">
                                                 <img class="list-thumbnail" src="${contextPath}${board.thumbnail}">
                                             </c:if>  
-										<!-- <a href="detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}${sURL}">${board.boardTitle}</a>  -->
-                                             <a href="../detail/${boardCode}/${board.boardNo}?cp=${pagination.currentPage}${sURL}">${board.boardTitle}</a>                       
+
+                                            <a href="../detail/${boardCode}/${board.boardNo}?cp=${pagination.currentPage}${sURL}">${board.boardTitle}</a>   
+                                            <%-- detail?no=${board.boardNo}&cp=${pagination.currentPage}&type=${param.type}${sURL} --%>
+                                
                                         </td>
                                         <td>${board.memberNickname}</td>
                                         <td>${board.createDate}</td>
@@ -98,8 +99,7 @@
             <div class="btn-area">
 
                 <c:if test="${!empty loginMember}">
-                    <!-- /comm/board/write/3?mode=insert&cp=1 -->
-                    <!-- /comm/board/list/3 -->
+                    <!-- /community/board/write -->
                     <button id="insertBtn" onclick="location.href='../write/${boardCode}?mode=insert&cp=${pagination.currentPage}'">글쓰기</button>                     
                 </c:if>
 
@@ -147,7 +147,7 @@
 
             <!-- /board/list?type=1&cp=10 &key=t&query=안녕 -->
 
-            <form action="${boardCode}" method="get" id="boardSearch" onsubmit="return searchValidate()">
+            <form action="list" method="get" id="boardSearch" onsubmit="return searchValidate()">
                 <input type="hidden" name="type" value="${param.type}">
 
                 <select name="key" id="search-key">

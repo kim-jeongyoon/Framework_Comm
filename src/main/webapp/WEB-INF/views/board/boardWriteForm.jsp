@@ -19,8 +19,6 @@
     <main>
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
-		<%-- /board/write/1 (get) --%>
-		<%-- /board/write/1 (post) --%>
         <form action="${boardCode}" enctype="multipart/form-data" method="POST" class="board-write"
             onsubmit="return writeValidate()">
 
@@ -165,10 +163,10 @@
 
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     
-    
     <script>
-    	const boardCode = "${boardCode}"; // 게시판 코드를 전역변수로 생성
+    	const boardCode = "${boardCode}"; // 게시판코드를 전역변수로 생성
     </script>
+    
 
     <script src="${contextPath}/resources/js/board/board.js"></script>
     <script src="${contextPath}/resources/js/board/boardWriteForm.js"></script>

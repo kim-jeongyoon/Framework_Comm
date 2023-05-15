@@ -10,7 +10,7 @@ import edu.kh.comm.board.model.vo.Reply;
 
 @Repository
 public class ReplyDAO {
-	
+
 	@Autowired
 	private SqlSessionTemplate sqlSession;
 
@@ -33,6 +33,7 @@ public class ReplyDAO {
 	}
 	
 
+
 	/** 댓글 삭제 DAO
 	 * @param replyNo
 	 * @return result
@@ -50,5 +51,4 @@ public class ReplyDAO {
 		return sqlSession.update("replyMapper.updateReply", reply);
 	}
 		
-	
 }

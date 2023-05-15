@@ -10,7 +10,7 @@ import edu.kh.comm.board.model.vo.Reply;
 import edu.kh.comm.common.Util;
 
 @Service
-public class ReplyServiceImpl implements ReplyService {
+public class ReplyServiceImpl implements ReplyService{
 	
 	@Autowired
 	private ReplyDAO dao;
@@ -26,14 +26,13 @@ public class ReplyServiceImpl implements ReplyService {
 	@Override
 	public int insertReply(Reply reply) {
 		
-		// xss, 개행문자처리
+		// XSS, 개행문자 처리
 		reply.setReplyContent( Util.XSSHandling( reply.getReplyContent()) );
 		reply.setReplyContent( Util.newLineHandling( reply.getReplyContent()) );
 		
 		return dao.insertReply(reply);
 	}
 	
-
 	// 댓글 삭제 서비스 구현
 	@Override
 	public int deleteReply(int replyNo) {
@@ -50,8 +49,6 @@ public class ReplyServiceImpl implements ReplyService {
 		
 		return dao.updateReply(reply);
 	}
-	
-	
 	
 	
 }

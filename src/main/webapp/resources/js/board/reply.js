@@ -24,10 +24,10 @@ function selectReplyList(){
                 // 행
                 const replyRow = document.createElement("li");
                 replyRow.classList.add("reply-row");
-
-	 			// 답글일 경우 child-reply 클래스 추가
+                
+                // 답글일 경우 child-reply 클래스 추가
                 if(reply.parentReplyNo != 0)  replyRow.classList.add("child-reply");
-	
+
 
                 // 작성자
                 const replyWriter = document.createElement("p");
@@ -66,7 +66,7 @@ function selectReplyList(){
                 // 행에 작성자, 내용 추가
                 replyRow.append(replyWriter, replyContent);
 
-                 // 로그인이 되어있는 경우 답글 버튼 추가
+          		// 로그인이 되어있는 경우 답글 버튼 추가
                 if(loginMemberNo != ""){
                     // 버튼 영역
                     const replyBtnArea = document.createElement("div");
@@ -107,7 +107,7 @@ function selectReplyList(){
                     // 행에 버튼영역 추가
                     replyRow.append(replyBtnArea); 
                 }
-
+                
 
                 // 댓글 목록(ul)에 행(li)추가
                 replyList.append(replyRow);
@@ -351,8 +351,9 @@ function updateReply(replyNo, btn){
 }
 
 
-// -----------------------------------------------------------------------------------------------
 
+// -------------------------------------------------------------------------------
+// -------------------------------------------------------------------------------
 
 // 답글 작성 화면 추가 
 // -> 답글 작성 화면은 전체 화면에 1개만 존재 해야한다!

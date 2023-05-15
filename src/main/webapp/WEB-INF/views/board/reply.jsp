@@ -8,8 +8,8 @@
         <ul id="reply-list">
 
             <c:forEach var="reply" items="${rList}">
-                                            <%-- 답글일 경우 --%>
-                <li class='reply-row  <c:if test="${reply.parentReplyNo != 0}"> child-reply </c:if>'>
+            									<%-- 답글일 경우 --%>
+                <li class='reply-row <c:if test="${reply.parentReplyNo != 0}"> child-reply </c:if>'>
                     <p class="reply-writer">
 
                         <c:if test="${empty reply.profileImage}">
