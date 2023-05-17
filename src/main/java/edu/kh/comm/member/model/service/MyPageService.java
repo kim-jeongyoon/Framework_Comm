@@ -25,10 +25,19 @@ public interface MyPageService {
 	 */
 	int secession(Member loginMember);
 
+	
+	
 	/** 프로필 이미지 수정 서비스
 	 * @param map
 	 * @return result
 	 */
 	int updateProfile(Map<String, Object> map) throws IOException;
+	
+	
+	
+	
+	
+	
+	
 
 }

@@ -19,6 +19,8 @@
     <main>
         <jsp:include page="/WEB-INF/views/common/header.jsp"/>
 
+        <%-- /board/write/1 (get)--%>
+        <%-- /board/write/1 (post)--%>
         <form action="${boardCode}" enctype="multipart/form-data" method="POST" class="board-write"
             onsubmit="return writeValidate()">
 
@@ -144,7 +146,8 @@
             <!-- 동작 구분 -->
             <input type="hidden" name="mode" value="${param.mode}">
 
-            <!-- 게시글 번호 (커맨드객체 BoardDetail.boardNo 세팅) -->
+            <!-- 게시글 번호 (커맨드객체 BoardDetail.boardNo 세팅)-->
+
             <input type="hidden" name="boardNo" value="${empty param.no ? 0 : param.no}">
             
             <!-- 현재 페이지 -->
@@ -155,6 +158,7 @@
             <!-- DELETE FROM BOARD_IMG 
                  WHERE BOARD_NO = 1000 
                  AND IMG_LEVEL IN (0,3,1,2) -->
+                
             <input type="hidden" name="deleteList" id="deleteList" value="">
 
         </form>
@@ -163,10 +167,10 @@
 
     <jsp:include page="/WEB-INF/views/common/footer.jsp"/>
     
+
     <script>
-    	const boardCode = "${boardCode}"; // 게시판코드를 전역변수로 생성
+        const boardCode = "${boardCode}"; // 게시판 코드를 전역변수로 생성
     </script>
-    
 
     <script src="${contextPath}/resources/js/board/board.js"></script>
     <script src="${contextPath}/resources/js/board/boardWriteForm.js"></script>

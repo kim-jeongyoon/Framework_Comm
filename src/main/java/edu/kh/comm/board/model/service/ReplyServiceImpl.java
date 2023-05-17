@@ -11,14 +11,13 @@ import edu.kh.comm.common.Util;
 
 @Service
 public class ReplyServiceImpl implements ReplyService{
-	
+
 	@Autowired
 	private ReplyDAO dao;
 
 	// 댓글 목록 조회 서비스 구현
 	@Override
 	public List<Reply> selectReplyList(int boardNo) {
-		
 		return dao.selectReplyList(boardNo);
 	}
 
@@ -27,11 +26,12 @@ public class ReplyServiceImpl implements ReplyService{
 	public int insertReply(Reply reply) {
 		
 		// XSS, 개행문자 처리
-		reply.setReplyContent( Util.XSSHandling( reply.getReplyContent()) );
-		reply.setReplyContent( Util.newLineHandling( reply.getReplyContent()) );
+		reply.setReplyContent(  Util.XSSHandling( reply.getReplyContent() )  );
+		reply.setReplyContent(  Util.newLineHandling( reply.getReplyContent() )  );
 		
 		return dao.insertReply(reply);
 	}
+
 	
 	// 댓글 삭제 서비스 구현
 	@Override
@@ -49,6 +49,13 @@ public class ReplyServiceImpl implements ReplyService{
 		
 		return dao.updateReply(reply);
 	}
+	
+	
+	
+	
+	
+	
+	
 	
 	
 }

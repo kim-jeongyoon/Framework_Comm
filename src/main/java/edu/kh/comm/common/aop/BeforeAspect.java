@@ -18,19 +18,22 @@ import edu.kh.comm.member.model.vo.Member;
 @Component
 @Aspect
 public class BeforeAspect {
-	private Logger logger = LoggerFactory.getLogger(BeforeAspect.class);
 
+	private Logger logger = LoggerFactory.getLogger(BeforeAspect.class);
+	
+	
+	// joinpoint : advice가 적용될 수 있는 후보
+	
 	// JoinPoint 인터페이스 : 
 	//		advice가 적용되는 Target Object (ServiceImpl)의
 	//		정보, 전달되는 매개변수, 메서드, 반환값, 예외 등을 얻을 수 있는 메서드를 제공
 	
 	// (주의사항) JoinPoint 인터페이스는 항상 첫 번째 매개변수로 작성 되어야 한다!
-
 	
 	@Before("CommonPointcut.implPointcut()")
 	public void serviceStart(JoinPoint jp) {
 		
-		String str = "--------------------------------------\n";
+		String str = "-------------------------------------------------------------\n";
 		
 		// jp.getTarget() : aop가 적용된 객체(각종 ServiceImpl)
 		String className = jp.getTarget().getClass().getSimpleName(); // 간단한 클래스명(패키지명 제외)
@@ -46,11 +49,11 @@ public class BeforeAspect {
 		// Start : MemberServiceImpl - login
 		
 		str += "Parameter : " + param + "\n";
-	
+		
 		
 		try {
-			// HttpServletRequest 얻어오기
-			// 단, 스프링 스케줄러 동작 시 예외 발생 (스케줄러는 요청 객체가 존재하지 않음)
+			// HttpServletRequest 얻어오기 
+			// 단, 스프링 스케쥴러 동작 시 예외 발생 (스케쥴러는 요청 객체가 존재하지 않음)
 			HttpServletRequest req = ((ServletRequestAttributes) RequestContextHolder.currentRequestAttributes()).getRequest();
 			
 			Member loginMember = (Member)req.getSession().getAttribute("loginMember");
@@ -62,15 +65,16 @@ public class BeforeAspect {
 				str += " (email : " + loginMember.getMemberEmail() + ")";
 			}
 			
+		}catch (Exception e) {
 			
-		} catch( Exception e ) {
-			str += "[스케줄러 동작]";
+			str += "[스케쥴러 동작]";
 		}
 		
 		
+		
+				
 		logger.info(str);
 	}
-	
 	
 	
 	public static String getRemoteAddr(HttpServletRequest request) {
@@ -113,5 +117,11 @@ public class BeforeAspect {
 
 		return ip;
 	}
-
+	
+	
+	
+	
 }
+
+
+

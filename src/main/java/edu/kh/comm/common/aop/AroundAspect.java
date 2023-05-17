@@ -1,20 +1,24 @@
 package edu.kh.comm.common.aop;
 
-import org.springframework.core.annotation.Order;
 import org.aspectj.lang.ProceedingJoinPoint;
 import org.aspectj.lang.annotation.Around;
 import org.aspectj.lang.annotation.Aspect;
 import org.slf4j.Logger;
 import org.slf4j.LoggerFactory;
+import org.springframework.core.annotation.Order;
 import org.springframework.stereotype.Component;
 
 @Component
 @Aspect
-@Order(3)
+@Order(4)
 public class AroundAspect {
+
 	private Logger logger = LoggerFactory.getLogger(AroundAspect.class);
 	
+	
 	// @Around : 전처리(@Before)와 후처리(@After)를 한 번에 작성 가능한 advice
+	
+	
 	
 	@Around("CommonPointcut.implPointcut()")
 	public Object runningTime(ProceedingJoinPoint jp) throws Throwable{
@@ -35,8 +39,17 @@ public class AroundAspect {
 		
 		long endMs = System.currentTimeMillis();
 		
-		logger.info("Running Time : " + (endMs - startMs) + "ms");
-		
+		logger.info("Running Time : " + (endMs - startMs) + "ms" );
+
 		return obj;
 	}
+	
 }
+
+
+
+
+
+
+
+

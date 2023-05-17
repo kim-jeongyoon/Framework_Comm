@@ -24,9 +24,10 @@ function selectReplyList(){
                 // 행
                 const replyRow = document.createElement("li");
                 replyRow.classList.add("reply-row");
-                
+
                 // 답글일 경우 child-reply 클래스 추가
                 if(reply.parentReplyNo != 0)  replyRow.classList.add("child-reply");
+
 
 
                 // 작성자
@@ -66,7 +67,8 @@ function selectReplyList(){
                 // 행에 작성자, 내용 추가
                 replyRow.append(replyWriter, replyContent);
 
-          		// 로그인이 되어있는 경우 답글 버튼 추가
+              
+                // 로그인이 되어있는 경우 답글 버튼 추가
                 if(loginMemberNo != ""){
                     // 버튼 영역
                     const replyBtnArea = document.createElement("div");
@@ -349,8 +351,6 @@ function updateReply(replyNo, btn){
         }
     });
 }
-
-
 
 // -------------------------------------------------------------------------------
 // -------------------------------------------------------------------------------

@@ -19,7 +19,6 @@ public class ReplyDAO {
 	 * @return rList
 	 */
 	public List<Reply> selectReplyList(int boardNo) {
-		
 		return sqlSession.selectList("replyMapper.selectReplyList", boardNo);
 	}
 
@@ -28,11 +27,8 @@ public class ReplyDAO {
 	 * @return result
 	 */
 	public int insertReply(Reply reply) {
-		
 		return sqlSession.insert("replyMapper.insertReply", reply);
 	}
-	
-
 
 	/** 댓글 삭제 DAO
 	 * @param replyNo
@@ -51,4 +47,8 @@ public class ReplyDAO {
 		return sqlSession.update("replyMapper.updateReply", reply);
 	}
 		
+	
+	
+	
+	
 }

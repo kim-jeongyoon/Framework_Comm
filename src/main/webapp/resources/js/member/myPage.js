@@ -216,25 +216,26 @@ function profileValidate(){
 
 
 
-// 프로필 이미지 옆 x버튼 클릭 시
-document.getElementById("delete-image").addEventListener("click", function(){
-    // 0 : 안눌러짐
-    // 1 : 눌러짐
+if( document.getElementById("delete-image") != null ){
+    // 프로필 이미지 옆 x버튼 클릭 시
+    document.getElementById("delete-image").addEventListener("click", function(){
+        // 0 : 안눌러짐
+        // 1 : 눌러짐
+        const del = document.getElementById("delete");
 
-    const del = document.getElementById("delete");
+        if(del.value == 0){ // 눌러지지 않은 경우
 
-    if(del.value == 0){ // 눌러지지 않은 경우
+            // 1) 프로필 이미지를 기본 이미지로 변경
+            document.getElementById("profile-image").setAttribute("src", contextPath + "/resources/images/user.png");                     
 
-        // 1) 프로필 이미지를 기본 이미지로 변경
-        document.getElementById("profile-image").setAttribute("src", contextPath + "/resources/images/user.png");                     
+            // 2) input type="file"에 저장된 값(value)에 "" 대입 
+            document.getElementById("input-image").value = "";
 
-        // 2) input type="file"에 저장된 값(value)에 "" 대입 
-        document.getElementById("input-image").value = "";
+            del.value = 1; // 눌러진걸로 인식
+        }
+    }); 
+}
 
-        del.value = 1; // 눌러진걸로 인식
-    }
-
-});
 
 
 // 다음 주소 API

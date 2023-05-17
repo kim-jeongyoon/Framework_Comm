@@ -11,14 +11,17 @@ public class MyPageDAO {
 
 	@Autowired
 	private SqlSessionTemplate sqlSession;
+
 	
+	// 파라미터가 Map인경우 -> Mapper에서 사용시 #{key} 를 작성하면
+	// key에 대응되는 value가 출력됨
+	// ex)  #{updateTel}  ->  '01099999999'
 	
 	/** 회원 정보 수정 DAO
 	 * @param paramMap
 	 * @return result
 	 */
 	public int updateInfo(Map<String, Object> paramMap) {
-		
 		return sqlSession.update("myPageMapper.updateInfo", paramMap);
 	}
 
@@ -28,7 +31,6 @@ public class MyPageDAO {
 	 * @return encPw
 	 */
 	public String selectEncPw(int memberNo) {
-		
 		return sqlSession.selectOne("myPageMapper.selectEncPw", memberNo);
 	}
 
@@ -38,17 +40,15 @@ public class MyPageDAO {
 	 * @return result
 	 */
 	public int changePw(Map<String, Object> paramMap) {
-		
 		return sqlSession.update("myPageMapper.changePw", paramMap);
 	}
 
-
+ 
 	/** 회원 탈퇴 DAO
 	 * @param memberNo
 	 * @return result
 	 */
 	public int secession(int memberNo) {
-		
 		return sqlSession.update("myPageMapper.secession", memberNo);
 	}
 
@@ -58,8 +58,12 @@ public class MyPageDAO {
 	 * @return result
 	 */
 	public int updateProfile(Map<String, Object> map) {
-		// TODO Auto-generated method stub
 		return sqlSession.update("myPageMapper.updateProfile", map);
 	}
 	
 }
+
+
+
+
+

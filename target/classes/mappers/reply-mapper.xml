@@ -33,6 +33,7 @@
 		ORDER SIBLINGS BY REPLY_NO
 	</select>
 	
+	
 	<!-- 댓글 등록 -->
 	<insert id="insertReply">
 		INSERT INTO REPLY_S VALUES(
@@ -50,8 +51,7 @@
 			
 		)
 	</insert>
-
-
+	
 	<!-- 댓글 삭제 -->
 	<update id="deleteReply">
 		UPDATE REPLY_S SET
@@ -66,4 +66,11 @@
 		REPLY_CONTENT = #{replyContent}
 		WHERE REPLY_NO = #{replyNo}
 	</update>
+	
+	
+	
+	
+	
+	
+
 </mapper>

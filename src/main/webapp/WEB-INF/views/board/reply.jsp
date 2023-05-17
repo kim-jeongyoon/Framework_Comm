@@ -8,8 +8,9 @@
         <ul id="reply-list">
 
             <c:forEach var="reply" items="${rList}">
-            									<%-- 답글일 경우 --%>
-                <li class='reply-row <c:if test="${reply.parentReplyNo != 0}"> child-reply </c:if>'>
+
+                                            <%-- 답글일 경우 --%>
+                <li class='reply-row  <c:if test="${reply.parentReplyNo != 0}"> child-reply </c:if>'>
                     <p class="reply-writer">
 
                         <c:if test="${empty reply.profileImage}">
@@ -28,6 +29,7 @@
                     
                     <p class="reply-content">${reply.replyContent}</p>
 
+
                     <%-- 로그인 상태인 경우 답글 버튼 출력 --%>
                     <c:if test="${!empty loginMember}">
                         <div class="reply-btn-area">
@@ -42,6 +44,8 @@
 
                         </div>
                     </c:if>
+
+
                 </li>
             </c:forEach>
             
