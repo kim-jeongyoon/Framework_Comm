@@ -56,7 +56,7 @@ public class ChatWebsocketHandler extends TextWebSocketHandler {
 	
 	
 	
-	// Set<WebSocketSession> 을 왜 만들었는가??
+	// Set<WebSocketSession> 을 왜 만들었는가?
 	
 	// - WebSocketSession == 웹소켓에 연결된 클라이언트의 세션
 	//    -> 세션을 통해서 누가 연결했는지 알 수 있다!
